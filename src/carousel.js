@@ -607,7 +607,7 @@ const Carousel = React.createClass({
       endValue: endValue || 'auto',
       onEnd: callback || null
     });
-  }
+  },
 
   animateSlide(easing, duration, endValue, callback) {
     this.tweenState(this.props.vertical ? 'top' : 'left', {
