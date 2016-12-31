@@ -600,15 +600,6 @@ const Carousel = React.createClass({
 
   // Animation
 
-  animateHeight(easing, duration, endValue, callback) {
-    this.tweenState('height', {
-      easing: easing || tweenState.easingTypes[this.props.easing],
-      duration: duration || this.props.speed,
-      endValue: endValue || 'auto',
-      onEnd: callback || null
-    });
-  },
-
   animateSlide(easing, duration, endValue, callback) {
     this.tweenState(this.props.vertical ? 'top' : 'left', {
       easing: easing || tweenState.easingTypes[this.props.easing],
@@ -831,7 +822,7 @@ const Carousel = React.createClass({
       position: 'relative',
       display: 'block',
       overflow: this.props.frameOverflow,
-      height: this.props.vertical ? this.state.frameWidth || 'initial' : this.animateHeight(this.easing, this.speed, horizontalHeight),
+      height: this.props.vertical ? this.state.frameWidth || 'initial' : horizontalHeight,
       margin: this.props.framePadding,
       padding: 0,
       transform: 'translate3d(0, 0, 0)',
