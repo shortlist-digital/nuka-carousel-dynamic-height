@@ -1,7 +1,7 @@
 {
-  "name": "nuka-carousel",
+  "name": "nuka-carousel-dynamic-height",
   "version": "2.0.3",
-  "description": "Pure React Carousel",
+  "description": "Pure React Carousel with variable height slides.",
   "main": "index.js",
   "dependencies": {
     "exenv": "^1.2.0",
@@ -69,7 +69,7 @@
   "author": "Ken Wheeler",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kenwheeler/nuka-carousel/issues"
+    "url": "https://github.com/brybrophy/nuka-carousel-dynamic-height/issues"
   },
-  "homepage": "https://github.com/kenwheeler/nuka-carousel"
+  "homepage": "https://github.com/brybrophy/nuka-carousel-dynamic-height"
 }
