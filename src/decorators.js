@@ -1,10 +1,11 @@
 'use strict';
 
 import React from 'react';
+import createReactClass from 'create-react-class';
 
 const DefaultDecorators = [
   {
-    component: React.createClass({
+    component: createReactClass({
       render() {
         return (
           <button
@@ -31,7 +32,7 @@ const DefaultDecorators = [
     position: 'CenterLeft'
   },
   {
-    component: React.createClass({
+    component: createReactClass({
       render() {
         let cellOffsetPosition = this.props.slideCount - 1;
 
@@ -72,7 +73,7 @@ const DefaultDecorators = [
     position: 'CenterRight'
   },
   {
-    component: React.createClass({
+    component: createReactClass({
       render() {
         var self = this;
         var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll, this.props.scrollMode === 'page');

@@ -2,10 +2,12 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
+import PropTypes from 'prop-types';
 import tweenState from 'kw-react-tween-state';
 import decorators from './decorators';
 import assign from 'object-assign';
 import ExecutionEnvironment from 'exenv';
+import createReactClass from 'create-react-class';
 
 const addEvent = function(elem, type, eventHandle) {
   if (elem === null || typeof (elem) === 'undefined') {
@@ -33,23 +35,23 @@ const removeEvent = function(elem, type, eventHandle) {
   }
 };
 
-const Carousel = React.createClass({
+const Carousel = createReactClass({
   displayName: 'Carousel',
 
   mixins: [tweenState.Mixin],
 
   propTypes: {
-    afterSlide: React.PropTypes.func,
-    autoplay: React.PropTypes.bool,
-    autoplayInterval: React.PropTypes.number,
-    beforeSlide: React.PropTypes.func,
-    cellAlign: React.PropTypes.oneOf(['left', 'center', 'right']),
-    cellSpacing: React.PropTypes.number,
-    data: React.PropTypes.func,
-    decorators: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        component: React.PropTypes.func,
-        position: React.PropTypes.oneOf([
+    afterSlide: PropTypes.func,
+    autoplay: PropTypes.bool,
+    autoplayInterval: PropTypes.number,
+    beforeSlide: PropTypes.func,
+    cellAlign: PropTypes.oneOf(['left', 'center', 'right']),
+    cellSpacing: PropTypes.number,
+    data: PropTypes.func,
+    decorators: PropTypes.arrayOf(
+      PropTypes.shape({
+        component: PropTypes.func,
+        position: PropTypes.oneOf([
           'TopLeft',
           'TopCenter',
           'TopRight',
@@ -60,34 +62,34 @@ const Carousel = React.createClass({
           'BottomCenter',
           'BottomRight'
         ]),
-        style: React.PropTypes.object
+        style: PropTypes.object
       })
     ),
-    dragging: React.PropTypes.bool,
-    easing: React.PropTypes.string,
-    edgeEasing: React.PropTypes.string,
-    fixedHeight: React.PropTypes.bool,
-    framePadding: React.PropTypes.string,
-    frameOverflow: React.PropTypes.string,
-    heightMode: React.PropTypes.oneOf(['max', 'adaptive']).isRequired,
-    initialSlideHeight: React.PropTypes.number,
-    initialSlideWidth: React.PropTypes.number,
-    lazyLoad: React.PropTypes.bool,
-    scrollMode: React.PropTypes.oneOf(['page', 'remainder']),
-    slideIndex: React.PropTypes.number,
-    slidesToShow: React.PropTypes.number,
-    slidesToScroll: React.PropTypes.oneOfType([
-      React.PropTypes.number,
-      React.PropTypes.oneOf(['auto'])
+    dragging: PropTypes.bool,
+    easing: PropTypes.string,
+    edgeEasing: PropTypes.string,
+    fixedHeight: PropTypes.bool,
+    framePadding: PropTypes.string,
+    frameOverflow: PropTypes.string,
+    heightMode: PropTypes.oneOf(['max', 'adaptive']).isRequired,
+    initialSlideHeight: PropTypes.number,
+    initialSlideWidth: PropTypes.number,
+    lazyLoad: PropTypes.bool,
+    scrollMode: PropTypes.oneOf(['page', 'remainder']),
+    slideIndex: PropTypes.number,
+    slidesToShow: PropTypes.number,
+    slidesToScroll: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['auto'])
     ]),
-    slideWidth: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
+    slideWidth: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
     ]),
-    speed: React.PropTypes.number,
-    vertical: React.PropTypes.bool,
-    width: React.PropTypes.string,
-    wrapAround: React.PropTypes.bool,
+    speed: PropTypes.number,
+    vertical: PropTypes.bool,
+    width: PropTypes.string,
+    wrapAround: PropTypes.bool,
   },
 
   getDefaultProps() {
